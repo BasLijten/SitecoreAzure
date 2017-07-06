@@ -342,7 +342,8 @@
           "Application Insights Role": "CM",
           "IP Security Client IP": "[parameters('securityClientIp')]",
           "IP Security Client IP Mask": "[parameters('securityClientIpMask')]",
-          "License Xml": "[parameters('licenseXml')]"
+          "License Xml": "[parameters('licenseXml')]",
+          "Social Link Domain": "bla"
         }
       }
     },
