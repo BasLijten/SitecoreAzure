@@ -92,18 +92,7 @@
     "searchservice.name": {
       "type": "string",
       "defaultValue": "[concat(parameters('deploymentId'), '-as')]"
-    },
-
-    "applicationinsights.name": {
-      "type": "string",
-      "defaultValue": "[concat(parameters('deploymentId'), '-ai')]"
-    },
-    "applicationinsights.location": {
-      "type": "string",
-      "defaultValue": "East US",
-      "allowedValues": [ "East US", "South Central US", "North Europe", "West Europe" ]
-    },
-
+    },    
     "rediscache.name": {
       "type": "string",
       "defaultValue": "[concat(parameters('deploymentId'), '-redis')]"
@@ -404,15 +393,7 @@
 
           "searchServiceName": {
             "value": "[parameters('searchservice.name')]"
-          },
-
-          "applicationInsightsName": {
-            "value": "[parameters('applicationinsights.name')]"
-          },
-          "applicationInsightsLocation": {
-            "value": "[parameters('applicationinsights.location')]"
-          },
-
+          },          
           "redisCacheName": {
             "value": "[parameters('rediscache.name')]"
           },
