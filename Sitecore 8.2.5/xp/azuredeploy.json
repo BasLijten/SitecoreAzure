@@ -115,23 +115,7 @@
     "searchServiceName": {
       "type": "string",
       "defaultValue": "[concat(parameters('deploymentId'), '-as')]"
-    },
-
-    "applicationInsightsName": {
-      "type": "string",
-      "defaultValue": "[concat(parameters('deploymentId'), '-ai')]"
-    },
-    "applicationInsightsLocation": {
-      "type": "string",
-      "defaultValue": "East US",
-      "allowedValues": [ "East US", "South Central US", "North Europe", "West Europe" ]
-    },
-    "applicationInsightsPricePlan": {
-      "type": "string",
-      "minLength": 1,
-      "defaultValue": "[concat(parameters('deploymentId'), '-ai-pp')]"
-    },
-
+    },   
     "cmHostingPlanName": {
       "type": "string",
       "defaultValue": "[concat(parameters('deploymentId'), '-cm-hp')]"
@@ -452,18 +436,7 @@
           },
           "searchServiceName": {
             "value": "[parameters('searchServiceName')]"
-          },
-
-          "applicationInsightsName": {
-            "value": "[parameters('applicationInsightsName')]"
-          },
-          "applicationInsightsLocation": {
-            "value": "[parameters('applicationInsightsLocation')]"
-          },
-          "applicationInsightsPricePlan": {
-            "value": "[parameters('applicationInsightsPricePlan')]"
-          },
-
+          },         
           "sitecoreSKU": {
             "value": "[parameters('sitecoreSKU')]"
           }
@@ -514,12 +487,7 @@
           },
           "searchServiceName": {
             "value": "[parameters('searchServiceName')]"
-          },
-
-          "applicationInsightsName": {
-            "value": "[parameters('applicationInsightsName')]"
-          },
-
+          },          
           "cmWebAppName": {
             "value": "[parameters('cmWebAppName')]"
           },
@@ -714,10 +682,7 @@
               "reportingSqlDatabaseName": "[parameters('reportingSqlDatabaseName')]",
 
               "redisCacheName": "[parameters('redisCacheName')]",
-              "searchServiceName": "[parameters('searchServiceName')]",
-              "applicationInsightsName": "[parameters('applicationInsightsName')]",
-              "applicationInsightsLocation": "[parameters('applicationInsightsLocation')]",
-
+              "searchServiceName": "[parameters('searchServiceName')]",              
               "cmHostingPlanName": "[parameters('cmHostingPlanName')]",
               "cmWebAppName": "[parameters('cmWebAppName')]",
               "cmCoreSqlDatabaseUserName": "[parameters('cmCoreSqlDatabaseUserName')]",
