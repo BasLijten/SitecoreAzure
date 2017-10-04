@@ -180,12 +180,6 @@
             "SkuName": "Standard",
             "SkuFamily": "C",
             "SkuCapacity": 1
-          },
-          "ApplicationInsightsPricePlan": {
-            "CurrentBillingFeatures": "Basic",
-            "DataVolumeCap": {
-              "Cap": 0.33
-            }
           }
         },
         "xP2": {
@@ -234,12 +228,6 @@
             "SkuName": "Standard",
             "SkuFamily": "C",
             "SkuCapacity": 1
-          },
-          "ApplicationInsightsPricePlan": {
-            "CurrentBillingFeatures": "Basic",
-            "DataVolumeCap": {
-              "Cap": 0.33
-            }
           }
         },
         "xP3": {
@@ -288,12 +276,6 @@
             "SkuName": "Standard",
             "SkuFamily": "C",
             "SkuCapacity": 1
-          },
-          "ApplicationInsightsPricePlan": {
-            "CurrentBillingFeatures": "Basic",
-            "DataVolumeCap": {
-              "Cap": 0.33
-            }
           }
         },
         "xP4": {
@@ -342,12 +324,6 @@
             "SkuName": "Standard",
             "SkuFamily": "C",
             "SkuCapacity": 1
-          },
-          "ApplicationInsightsPricePlan": {
-            "CurrentBillingFeatures": "Application Insights Enterprise",
-            "DataVolumeCap": {
-              "Cap": 0
-            }
           }
         },
         "xP5": {
@@ -396,12 +372,6 @@
             "SkuName": "Standard",
             "SkuFamily": "C",
             "SkuCapacity": 1
-          },
-          "ApplicationInsightsPricePlan": {
-            "CurrentBillingFeatures": "Application Insights Enterprise",
-            "DataVolumeCap": {
-              "Cap": 0
-            }
           }
         }
       }
@@ -716,38 +686,7 @@
       "tags": {
         "provider": "[variables('sitecoreTags').provider]"
       }
-    },
-    {
-      "type": "Microsoft.Insights/Components",
-      "name": "[variables('appInsightsNameTidy')]",
-      "apiVersion": "[variables('appInsightsApiVersion')]",
-      "location": "[parameters('applicationInsightsLocation')]",
-      "properties": {
-        "ApplicationId": "[variables('appInsightsNameTidy')]",
-        "Application_Type": "web"
-      },
-      "tags": {
-        "provider": "[variables('sitecoreTags').provider]"
-      }
-    },
-    {
-      "type": "Microsoft.Insights/Components/CurrentBillingFeatures",
-      "name": "[concat(variables('appInsightsNameTidy'), '/', variables('appInsightsPricePlanTidy'))]",
-      "location": "[parameters('applicationInsightsLocation')]",
-      "apiVersion": "[variables('appInsightsApiVersion')]",
-      "properties": {
-       "CurrentBillingFeatures": "[parameters('resourceSizes').ApplicationInsightsPricePlan.CurrentBillingFeatures]",
-       "DataVolumeCap": {
-         "Cap": "[parameters('resourceSizes').ApplicationInsightsPricePlan.DataVolumeCap.Cap]"
-        }
-       },
-      "dependsOn": [
-        "[resourceId('Microsoft.Insights/Components', variables('appInsightsNameTidy'))]"
-      ],
-      "tags": {
-        "provider": "[variables('sitecoreTags').provider]"
-      }      
-   }
+    }
   ],
   "outputs": {
     "infrastructure": {
