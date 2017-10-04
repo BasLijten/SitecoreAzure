@@ -7,7 +7,6 @@
     "dbApiVersion": "2014-04-01-preview",
     "searchApiVersion": "2015-08-19",
     "redisApiVersion": "2016-04-01",
-    "appInsightsApiVersion": "2015-05-01",
     "cmHostingPlanNameTidy": "[toLower(trim(parameters('cmHostingPlanName')))]",
     "cdHostingPlanNameTidy": "[toLower(trim(parameters('cdHostingPlanName')))]",
     "prcHostingPlanNameTidy": "[toLower(trim(parameters('prcHostingPlanName')))]",
@@ -24,8 +23,6 @@
     "repDbNameTidy": "[toLower(trim(parameters('reportingSqlDatabaseName')))]",
     "searchServiceNameTidy": "[toLower(trim(parameters('searchServiceName')))]",
     "redisCacheNameTidy": "[toLower(trim(parameters('redisCacheName')))]",
-    "appInsightsNameTidy": "[toLower(trim(parameters('applicationInsightsName')))]",
-    "appInsightsPricePlanTidy": "[toLower(trim(parameters('applicationInsightsPricePlan')))]",
     "sitecoreTags": {
       "provider": "b51535c2-ab3e-4a68-95f8-e2e3c9a19299"
     }
@@ -125,19 +122,6 @@
     "redisCacheName": {
       "type": "string",
       "defaultValue": "[concat(parameters('deploymentId'), '-redis')]"
-    },
-    "applicationInsightsName": {
-      "type": "string",
-      "defaultValue": "[concat(parameters('deploymentId'), '-ai')]"
-    },
-    "applicationInsightsLocation": {
-      "type": "string",
-      "allowedValues": [ "East US", "South Central US", "North Europe", "West Europe" ]
-    },
-    "applicationInsightsPricePlan": {
-      "type": "string",
-      "minLength": 1,
-      "defaultValue": "[concat(parameters('deploymentId'), '-ai-pp')]"
     },
 
     "sitecoreSKU": {
